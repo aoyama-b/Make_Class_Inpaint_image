@@ -20,7 +20,7 @@ pip install transformers
 - Inference:画像フォルダを用いた推論には以下のコードを用います。
 コマンドラインでは入力画像ディレクトリパス、出力画像ディレクトリパス、検出したいオブジェクトクラス、Grounding DINOの検出に用いる閾値を設定することができます。
 ```bash
-CUDA_VISIBLE_DEVICES={GPU ID} python demo/inference_on_a_image.py \
+CUDA_VISIBLE_DEVICES={GPU ID} python make_inpaint_dataset.py \
 -i {your input image folder path} \
 -o {your output image folder path} \
 -c {Object class to be detected} \
