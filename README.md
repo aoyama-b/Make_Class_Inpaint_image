@@ -67,6 +67,17 @@ http://localhost:7860
 - Gradio
 - Docker
 
+## 使用しているモデルとライブラリ
+
+このプロジェクトでは以下の素晴らしいモデルとライブラリを使用しています：
+
+- [Grounding DINO](https://github.com/IDEA-Research/GroundingDINO) - オープンボキャブラリー物体検出モデル
+- [Transformers](https://huggingface.co/docs/transformers/en/model_doc/grounding-dino) - Hugging Face Transformersライブラリ
+- [LaMa](https://github.com/advimman/lama) - 大規模マスク画像修復モデル
+- [simple-lama-inpainting](https://github.com/enesmsahin/simple-lama-inpainting) - LaMaモデルの簡単な実装
+
+これらの素晴らしいコードを共有していただき、心より感謝申し上げます。
+
 ## ライセンス
 
 [ライセンス情報を記載]
