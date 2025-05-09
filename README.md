@@ -12,7 +12,7 @@
 ## 実装方法
 
 <details>
-<summary>Dockerを使用する場合（推奨）</summary>
+<summary>Dockerを使用する場合</summary>
 
 ### 必要条件
 
@@ -24,8 +24,8 @@
 
 1. リポジトリのクローン:
 ```bash
-git clone [リポジトリURL]
-cd [リポジトリ名]
+git clone https://github.com/aoyama-b/Make_Class_Inpaint_image.git
+cd Make_Class_Inpaint_image
 ```
 
 2. NVIDIA Container Toolkitのインストール（GPUを使用する場合）:
@@ -60,22 +60,20 @@ http://localhost:7860
 
 - Python 3.9以上
 - CUDA対応GPU（推奨）
-- pip（Pythonパッケージマネージャー）
 
 ### インストール方法
 
 1. リポジトリのクローン:
 ```bash
-git clone [リポジトリURL]
-cd [リポジトリ名]
+git clone https://github.com/aoyama-b/Make_Class_Inpaint_image.git
+cd Make_Class_Inpaint_image
 ```
 
-2. 仮想環境の作成と有効化:
+2. 仮想環境の作成と有効化（推奨）:
 ```bash
-python -m venv venv
-source venv/bin/activate  # Linuxの場合
-# または
-.\venv\Scripts\activate  # Windowsの場合
+# Anacondaを用いた例
+conda create -n class_inpaint python=3.9
+conda activate class_inpaint
 ```
 
 3. 必要なパッケージのインストール:
@@ -127,7 +125,7 @@ python make_inpaint_dataset.py \
 </details>
 
 <details>
-<summary>Google Colabで実装する場合</summary>
+<summary>Google Colabで実装する場合（実装が容易）</summary>
 
 Colab用のノートブック（`inpaint_colab.ipynb`）を用意しています。以下の手順で実行できます：
 
