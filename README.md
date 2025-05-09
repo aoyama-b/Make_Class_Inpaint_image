@@ -12,7 +12,7 @@
 ## 実装方法
 
 <details>
-<summary>Dockerを使用する場合（推奨）</summary>
+<summary>Dockerを使用する場合</summary>
 
 ### 必要条件
 
@@ -125,7 +125,7 @@ python make_inpaint_dataset.py \
 </details>
 
 <details>
-<summary>Google Colabで実装する場合</summary>
+<summary>Google Colabで実装する場合（実装が容易）</summary>
 
 Colab用のノートブック（`inpaint_colab.ipynb`）を用意しています。以下の手順で実行できます：
 
