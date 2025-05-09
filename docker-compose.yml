@@ -1,0 +1,17 @@
+version: '3'
+services:
+  inpaint-app:
+    build: .
+    ports:
+      - "7860:7860"
+    volumes:
+      - .:/app
+    environment:
+      - CUDA_VISIBLE_DEVICES=0  # GPUを使用する場合
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu] 

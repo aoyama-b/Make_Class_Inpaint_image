@@ -1,38 +1,80 @@
-## Make_Class_Inpaint_image
-このコードはオープンボキャブラリー物体検出器である[Groundig DINO](https://github.com/IDEA-Research/GroundingDINO)を用いて検出した画像内のオブジェクトを[LaMa](https://github.com/advimman/lama)を用いて削除するものです。
+# 画像インペイント処理アプリケーション
 
-## Installation and Get Started
+このアプリケーションは、指定されたオブジェクトを画像から自動的に検出し、その部分をインペイント（修復）するツールです。Grounding DINOとLaMaモデルを使用して、高品質な画像修復を実現します。
 
-Required environments:
-- Linux
-- Python
-- PyTorch
-- CUDA(GPU利用可なら)
+## 機能
 
-Install:
+- 画像内の特定のオブジェクト（車、人物など）の自動検出
+- 検出されたオブジェクトのマスク生成
+- LaMaモデルを使用した高品質なインペイント処理
+- Gradioを使用した直感的なWebインターフェース
 
-```
-pip install simple-lama-inpainting
-pip install transformers
-```
+## 必要条件
 
-## Usage:
-- Inference:画像フォルダを用いた推論には以下のコードを用います。
-コマンドラインでは入力画像ディレクトリパス、出力画像ディレクトリパス、検出したいオブジェクトクラス、Grounding DINOの検出に用いる閾値を設定することができます。
+- Docker
+- Docker Compose
+- NVIDIA GPU（推奨）とNVIDIA Container Toolkit
+
+## インストール方法
+
+1. リポジトリのクローン:
 ```bash
-CUDA_VISIBLE_DEVICES={GPU ID} python make_inpaint_dataset.py \
--i {your input image folder path} \
--o {your output image folder path} \
--c {Object class to be detected} \
--t {Object detector threshold}
+git clone [リポジトリURL]
+cd [リポジトリ名]
 ```
 
-- Gradio:未実装
+2. NVIDIA Container Toolkitのインストール（GPUを使用する場合）:
+```bash
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
 
-## Acknowledgments:
-以下に実装に用いたモデル・モジュールのリンクを添付します。
-素晴らしいコードを共有していただきありがとうございます。
-- [Grounding DINO](https://github.com/IDEA-Research/GroundingDINO)
-- [Transformers](https://huggingface.co/docs/transformers/en/model_doc/grounding-dino)
-- [LaMa](https://github.com/advimman/lama)
-- [simple-lama-inpainting](https://github.com/enesmsahin/simple-lama-inpainting)
+sudo apt-get update
+sudo apt-get install -y nvidia-docker2
+sudo systemctl restart docker
+```
+
+## 使用方法
+
+1. アプリケーションの起動:
+```bash
+docker-compose up --build
+```
+
+2. ブラウザで以下のURLにアクセス:
+```
+http://localhost:7860
+```
+
+3. 使用方法:
+   - 入力画像をアップロード
+   - 対象クラス名を入力（例: "car", "person"）
+   - 検出閾値を調整（0.1-0.9）
+   - 「処理開始」ボタンをクリック
+
+## 注意事項
+
+- 初回起動時は、モデルのダウンロードに時間がかかる場合があります
+- GPUメモリを大量に使用するため、十分なGPUメモリを確保してください
+- 処理時間は画像サイズとGPUの性能に依存します
+
+## 技術スタック
+
+- Python 3.9
+- PyTorch
+- Transformers (Grounding DINO)
+- Simple LaMa Inpainting
+- Gradio
+- Docker
+
+## ライセンス
+
+[ライセンス情報を記載]
+
+## 貢献
+
+1. このリポジトリをフォーク
+2. 新しいブランチを作成 (`git checkout -b feature/amazing-feature`)
+3. 変更をコミット (`git commit -m 'Add some amazing feature'`)
+4. ブランチにプッシュ (`git push origin feature/amazing-feature`)
+5. プルリクエストを作成
