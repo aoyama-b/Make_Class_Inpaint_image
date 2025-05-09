@@ -60,7 +60,6 @@ http://localhost:7860
 
 - Python 3.9以上
 - CUDA対応GPU（推奨）
-- pip（Pythonパッケージマネージャー）
 
 ### インストール方法
 
