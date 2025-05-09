@@ -161,7 +161,7 @@ Colab用のノートブック（`inpaint_colab.ipynb`）を用意しています
 
 ## 使用しているモデルとライブラリ
 
-このプロジェクトでは以下の素晴らしいモデルとライブラリを使用しています：
+このプロジェクトでは以下のモデルとライブラリを使用しています：
 
 - [Grounding DINO](https://github.com/IDEA-Research/GroundingDINO) - オープンボキャブラリー物体検出モデル
 - [Transformers](https://huggingface.co/docs/transformers/en/model_doc/grounding-dino) - Hugging Face Transformersライブラリ
@@ -169,15 +169,3 @@ Colab用のノートブック（`inpaint_colab.ipynb`）を用意しています
 - [simple-lama-inpainting](https://github.com/enesmsahin/simple-lama-inpainting) - LaMaモデルの簡単な実装
 
 これらの素晴らしいコードを共有していただき、心より感謝申し上げます。
-
-## ライセンス
-
-[ライセンス情報を記載]
-
-## 貢献
-
-1. このリポジトリをフォーク
-2. 新しいブランチを作成 (`git checkout -b feature/amazing-feature`)
-3. 変更をコミット (`git commit -m 'Add some amazing feature'`)
-4. ブランチにプッシュ (`git push origin feature/amazing-feature`)
-5. プルリクエストを作成
