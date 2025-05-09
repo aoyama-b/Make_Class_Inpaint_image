@@ -19,8 +19,8 @@
 
 1. リポジトリのクローン:
 ```bash
-git clone [リポジトリURL]
-cd [リポジトリ名]
+git clone https://github.com/aoyama-b/Make_Class_Inpaint_image.git
+cd https://github.com/aoyama-b/Make_Class_Inpaint_image.git
 ```
 
 2. NVIDIA Container Toolkitのインストール（GPUを使用する場合）:
